@@ -9,6 +9,10 @@ a particular system or application component.
 This modular approach promotes reusability, maintainability, and consistency across different 
 playbooks and environments.
 
+**Command to create ansible role is**
+ansible-galaxy role init <role_name>
+
+
 ## Key Components of an Ansible Role
 
 ### Tasks
@@ -21,6 +25,7 @@ Tasks that are triggered by changes in other tasks, typically used for actions l
 Static files that need to be transferred to managed hosts.
 
 ### Templates
+Where we will have dynamic files, which we want to change.
 Jinja2 templates that can be rendered and transferred to managed hosts.
 
 ### Vars
