@@ -93,20 +93,41 @@ of the infrastructure independently.
 Using roles ensures that the same setup and configuration procedures are applied uniformly across
 multiple environments, reducing the risk of configuration drift.
 
-**##How to Use roles in the play book**
-Step1:
-Command to create ansible role is
-ansible-galaxy role init <role_name>
-ansible-galaxy role init test1
+Here’s a more polished and structured version of your notes:  
 
-After that add all the necessary configuration like tasks, variables and handlers.
-How to call roles in the playbook
+---  
+
+### How to Use Roles in a Playbook**  
+
+#### **Step 1: Create a New Ansible Role**  
+To generate a new role structure, use:  
+```bash
+ansible-galaxy role init <role_name>  
+```  
+**Example:**  
+```bash
+ansible-galaxy role init test1  
+```  
+This creates a directory with the standard Ansible role structure (e.g., `tasks/`, `vars/`, `handlers/`).  
+
+#### **Step 2: Configure the Role**  
+Add necessary files inside the role directory, such as:  
+- **Tasks** (`tasks/main.yml`) – Define playbook steps.  
+- **Variables** (`vars/main.yml` or `defaults/main.yml`) – Set role variables.  
+- **Handlers** (`handlers/main.yml`) – Manage service restarts/reloads.  
+
+#### **Step 3: Call the Role in a Playbook**  
+To use the role in a playbook, reference it under `roles:`:  
+```yaml
+---
+- hosts: all  
+  become: true  
+  roles:  
+    - test1  
+```  
 
 ---
-hosts: all
-become: true
-roles: 
-  -test1
+
 
 Above is the syntax to call roles in the playbook
 
