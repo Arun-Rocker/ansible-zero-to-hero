@@ -9,7 +9,8 @@ a particular system or application component.
 This modular approach promotes reusability, maintainability, and consistency across different 
 playbooks and environments.
 
-**Command to create ansible role is**
+**Command to create ansible role is****
+
 ansible-galaxy role init <role_name>
 
 
