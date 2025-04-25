@@ -92,3 +92,22 @@ of the infrastructure independently.
 ### Consistency
 Using roles ensures that the same setup and configuration procedures are applied uniformly across
 multiple environments, reducing the risk of configuration drift.
+
+**##How to Use roles in the play book**
+Step1:
+Command to create ansible role is
+ansible-galaxy role init <role_name>
+ansible-galaxy role init test1
+
+After that add all the necessary configuration like tasks, variables and handlers.
+How to call roles in the playbook
+
+---
+hosts: all
+become: true
+roles: 
+  -test1
+
+Above is the syntax to call roles in the playbook
+
+
